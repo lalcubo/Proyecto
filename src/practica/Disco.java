@@ -22,10 +22,19 @@ public class Disco extends Obra{
      return discografia;
   }
   //----- metodo para asignar discografia
-   public void setDiscografia(String dis)
+  public void setDiscografia(String dis)
     {
         discografia = dis;
     }
   
-    
+ //-----metodo para obtener canciones-----
+  public int getNCanciones()
+    {
+        return nCanciones;
+    } 
+ //---- metodo para asignar el total de canciones----
+  public void setNCanciones(int canc)
+    {
+        nCanciones = canc;
+    }  
 }
