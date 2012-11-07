@@ -21,6 +21,11 @@ public class Disco extends Obra{
   {
      return discografia;
   }
+  //----- metodo para asignar discografia
+   public void setDiscografia(String dis)
+    {
+        discografia = dis;
+    }
   
     
 }

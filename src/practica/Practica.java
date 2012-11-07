@@ -20,12 +20,15 @@ public class Practica {
         BufferedReader leer = new BufferedReader(lector);
         String opcion;
         int tam_artista=10;
+        int tam_obra=10;
         int tam_libros=10;
         int tam_discos=10;
         int tam_peliculas=10;
         
     //    int posicion=0;
-     //   Personas[] vector = new Personas[5];
+        Obra[] obra = new Obra[tam_obra];
+        Artista[] artista = new Artista[tam_artista];
+        Disco[] disco = new Disco[tam_discos];
         do{
             System.out.println( "MENU" );
             System.out.println( "1 Crear Artista" );
