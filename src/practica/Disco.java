@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package practica;
+import java.io.*;
 
 /**
  *
@@ -11,6 +12,9 @@ package practica;
 public class Disco extends Obra{
     private String discografia;
     private int nCanciones;
+    InputStreamReader lector = new InputStreamReader(System.in);
+    BufferedReader leer = new BufferedReader(lector);
+    String opcion;
     //////----constructor sin parametros-----
     public Disco()
     {
@@ -37,4 +41,15 @@ public class Disco extends Obra{
     {
         nCanciones = canc;
     }  
+  public void crearMenu() throws IOException
+  {
+     System.out.println( "MENU DISCO" );
+     System.out.println( "1 Obtener Discografia" );
+     System.out.println( "2 Asignar Discografia" );
+     System.out.println( "3 Obtener numero de canciones" );
+     System.out.println( "4 Asignar numero de canciones" );
+     System.out.print( "Por favor seleccione una opcion: " );
+     opcion = leer.readLine();  
+  }
+  
 }
