@@ -60,6 +60,18 @@ public class Obra {
     public int getAnhoEdicion(){
     
     return this.anhoEdicion;
-    }
     
+    }
+    /*Busca si existe el artista y se lo asigna a la obra*/
+    public boolean asignarArtista(Artista[] art, String nombre){
+    
+    boolean enc = false;    
+    for(int indi=0 ; indi < art.length && !enc ; indi++) 
+        if(art[indi].getNombre().equalsIgnoreCase(nombre)){
+            enc = true;
+            this.setAutor(art[indi]);
+        }//fin if
+    return enc;
+    
+    }//fin asignarArtista
 }
