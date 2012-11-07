@@ -39,7 +39,9 @@ public class Practica {
             switch(opcion)
             {
                case "1":   
-                 
+                 System.out.println( "4 Peliculas" );
+                 System.out.println( "5 Reportes" );
+                 System.out.println( "6 Salir" );
                    break;
                case "2":
                  
