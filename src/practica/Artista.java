@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package practica;
-
+import java.io.*;
 /**
  *
  * @author Luis
@@ -11,6 +11,9 @@ package practica;
 public class Artista {
     private String nombre;
     private int anioNacimiento;
+    InputStreamReader lector = new InputStreamReader(System.in);
+    BufferedReader leer = new BufferedReader(lector);
+    String opciones;
  //-----------constructor con parametros---------------
     public Artista (String nomb, int anio)
     {
@@ -40,5 +43,25 @@ public class Artista {
     public void setNombre(String nomb)
     {
         nombre = nomb;
+    }
+    public void crearMenu() throws IOException
+    {
+     System.out.println( "1 Ingrsar Datoss" );
+     System.out.println( "2 Volver al menu principal" );
+     System.out.print( "Por favor seleccione una opcion: " );
+     opciones = leer.readLine();   
+       switch(opciones)
+            {
+         case "1":
+             System.out.println( "Ingrese artista" );
+             opciones = leer.readLine();
+             this.setNombre(opciones);
+             System.out.println( "Ingrese el año de nacimientos" );
+             opciones = leer.readLine();
+             this.setAnioNacimiento(Integer.parseInt(opciones));   
+            break;
+         case "2":
+             break;
+       }
     }
 }
