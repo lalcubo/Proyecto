@@ -44,14 +44,16 @@ public class Disco extends Obra{
   //---- buscar disco-------
    public void buscarDisco(Disco[] disc, String nomb)
     {
-      for(int indi=0 ; indi < disc.length; indi++) 
-        if(disc[indi].getDiscografia().equalsIgnoreCase(nomb))
-        {
-         System.out.println("EL titulo es: "+disc[indi].getTitulo());
-         System.out.println("El año de edicion es: "+disc[indi].getAnhoEdicion());
-         System.out.println("El autor es: "+disc[indi].getAutor());
-         System.out.println("La Discografia es: "+disc[indi].getDiscografia());
-         System.out.println("La cantidad de cancioens es: "+disc[indi].getNCanciones());
+      for(int indi=0 ; indi < disc.length; indi++) {
+            if(disc[indi].getTitulo().equalsIgnoreCase(nomb))
+            {
+             System.out.println("EL titulo es: "+disc[indi].getTitulo());
+             System.out.println("El año de edicion es: "+disc[indi].getAnhoEdicion());
+             System.out.println("El autor es: "+disc[indi].getAutor().getNombre());
+             System.out.println("El año de nacimiento es: "+disc[indi].getAutor().getAnioNacimiento());
+             System.out.println("La Discografia es: "+disc[indi].getDiscografia());
+             System.out.println("La cantidad de canciones es: "+disc[indi].getNCanciones());
+            }
         } 
     }  
   public void crearMenu(Artista[] artis,Disco[] disc) throws IOException
