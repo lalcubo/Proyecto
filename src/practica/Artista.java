@@ -53,10 +53,10 @@ public class Artista {
        switch(opciones)
             {
          case "1":
-             System.out.println( "Ingrese artista" );
+             System.out.print( "Ingrese artista: " );
              opciones = leer.readLine();
              this.setNombre(opciones);
-             System.out.println( "Ingrese el año de nacimientos" );
+             System.out.print( " Ingrese el año de nacimientos: " );
              opciones = leer.readLine();
              this.setAnioNacimiento(Integer.parseInt(opciones));   
             break;
