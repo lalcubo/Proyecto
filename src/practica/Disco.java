@@ -14,7 +14,7 @@ public class Disco extends Obra{
     private int nCanciones;
     InputStreamReader lector = new InputStreamReader(System.in);
     BufferedReader leer = new BufferedReader(lector);
-    String opcion;
+    String opciones;
     //////----constructor sin parametros-----
     public Disco()
     {
@@ -50,24 +50,24 @@ public class Disco extends Obra{
      System.out.println( "3 Consultar discografia y canciones" );
      System.out.println( "4 Volver al menu principal" );
      System.out.print( "Por favor seleccione una opcion: " );
-     opcion = leer.readLine();
-      switch(opcion)
+     opciones = leer.readLine();
+      switch(opciones)
       {
          case "1": 
                 System.out.println( "Ingrese artista" );
-                opcion = leer.readLine();
-                retorno = this.asignarArtista(artis, opcion);
+                opciones = leer.readLine();
+                retorno = this.asignarArtista(artis, opciones);
                 if(!retorno) {
                      System.out.println( "El artista no existe" );
                 }
                 else
                 {
                 System.out.println( "Ingrese el nombre del disco" );
-                opcion = leer.readLine();
-                setDiscografia(opcion);
+                opciones = leer.readLine();
+                setDiscografia(opciones);
                 System.out.println( "Ingrese el numero de canciones" );
-                opcion = leer.readLine();
-                setNCanciones(Integer.parseInt(opcion));
+                opciones = leer.readLine();
+                setNCanciones(Integer.parseInt(opciones));
                 }
               break;
          case "2": 
