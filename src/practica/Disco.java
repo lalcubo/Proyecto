@@ -41,7 +41,20 @@ public class Disco extends Obra{
     {
         nCanciones = canc;
     }  
-  public void crearMenu(Artista[] artis) throws IOException
+  //---- buscar disco-------
+   public void buscarDisco(Disco[] disc, String nomb)
+    {
+      for(int indi=0 ; indi < disc.length; indi++) 
+        if(disc[indi].getDiscografia().equalsIgnoreCase(nomb))
+        {
+         System.out.println("EL titulo es: "+disc[indi].getTitulo());
+         System.out.println("El año de edicion es: "+disc[indi].getAnhoEdicion());
+         System.out.println("El autor es: "+disc[indi].getAutor());
+         System.out.println("La Discografia es: "+disc[indi].getDiscografia());
+         System.out.println("La cantidad de cancioens es: "+disc[indi].getNCanciones());
+        } 
+    }  
+  public void crearMenu(Artista[] artis,Disco[] disc) throws IOException
   {
      boolean retorno;
      System.out.println( "MENU DISCO" );
@@ -54,7 +67,7 @@ public class Disco extends Obra{
       switch(opciones)
       {
          case "1": 
-                System.out.println( "Ingrese artista" );
+                System.out.print( "Ingrese artista: " );
                 opciones = leer.readLine();
                 retorno = this.asignarArtista(artis, opciones);
                 if(!retorno) {
@@ -62,16 +75,24 @@ public class Disco extends Obra{
                 }
                 else
                 {
-                System.out.println( "Ingrese el nombre del disco" );
+                System.out.print( "Ingrese el nombre de la discografia: " );
                 opciones = leer.readLine();
                 setDiscografia(opciones);
-                System.out.println( "Ingrese el numero de canciones" );
+                System.out.print( "Ingrese el numero de canciones: " );
                 opciones = leer.readLine();
                 setNCanciones(Integer.parseInt(opciones));
+                System.out.print( "Ingrese el titulo del disco: " );
+                opciones = leer.readLine();
+                setTitulo(opciones);
+                System.out.print( "Ingrese el año de edicion: " );
+                opciones = leer.readLine();
+                setAnhoEdicion(Integer.parseInt(opciones));
                 }
               break;
          case "2": 
-              
+                System.out.print( "Ingrese el titulo del disco a buscar: " );
+                opciones = leer.readLine();
+                this.buscarDisco(disc, opciones);
               break;
          case "3": 
               
