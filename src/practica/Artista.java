@@ -46,7 +46,7 @@ public class Artista {
     }
     public void crearMenu() throws IOException
     {
-     System.out.println( "1 Ingrsar Datoss" );
+     System.out.println( "1 Ingrsar Datos" );
      System.out.println( "2 Volver al menu principal" );
      System.out.print( "Por favor seleccione una opcion: " );
      opciones = leer.readLine();   
