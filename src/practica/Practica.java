@@ -46,7 +46,8 @@ public class Practica {
             switch(opcion)
             {
                case "1":   
-
+                   artista[tam_artista].crearMenu();
+                   tam_artista++;
                    break;
                case "2":
                  
@@ -61,7 +62,9 @@ public class Practica {
                case "5":
                  
                    break;                   
-                   
+               case "6": 
+                       
+                   break;
               default: System.out.println("No ha escrito ninguna opcion valida.");  
             }
             
