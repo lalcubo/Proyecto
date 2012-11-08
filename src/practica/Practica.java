@@ -46,6 +46,7 @@ public class Practica {
             switch(opcion)
             {
                case "1":   
+                   artista[tam_artista] = new Artista();
                    artista[tam_artista].crearMenu();
                    tam_artista++;
                    break;
