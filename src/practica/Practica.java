@@ -25,7 +25,11 @@ public class Practica {
         int tam_discos=10;
         int tam_peliculas=10;
         
-    //    int posicion=0;
+        int pos_artista=0;
+        int pos_libro=0;
+        int pos_disco=0;
+        int pos_pelicula=0;
+  
         Obra[] obra = new Obra[tam_obra];
         Artista[] artista = new Artista[tam_artista];
         Disco[] disco = new Disco[tam_discos];
@@ -48,7 +52,8 @@ public class Practica {
                  
                    break;
                case "3":
-                 
+                   disco[pos_disco].crearMenu(artista);
+                   pos_disco++;
                    break;
                case "4":
                  

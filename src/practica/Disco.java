@@ -41,15 +41,45 @@ public class Disco extends Obra{
     {
         nCanciones = canc;
     }  
-  public void crearMenu() throws IOException
+  public void crearMenu(Artista[] artis) throws IOException
   {
+     boolean retorno;
      System.out.println( "MENU DISCO" );
-     System.out.println( "1 Obtener Discografia" );
-     System.out.println( "2 Asignar Discografia" );
-     System.out.println( "3 Obtener numero de canciones" );
-     System.out.println( "4 Asignar numero de canciones" );
+     System.out.println( "1 Crear Disco" );
+     System.out.println( "2 Buscar Disco" );
+     System.out.println( "3 Consultar discografia y canciones" );
+     System.out.println( "4 Volver al menu principal" );
      System.out.print( "Por favor seleccione una opcion: " );
-     opcion = leer.readLine();  
+     opcion = leer.readLine();
+      switch(opcion)
+      {
+         case "1": 
+                System.out.println( "Ingrese artista" );
+                opcion = leer.readLine();
+                retorno = this.asignarArtista(artis, opcion);
+                if(!retorno) {
+                     System.out.println( "El artista no existe" );
+                }
+                else
+                {
+                System.out.println( "Ingrese el nombre del disco" );
+                opcion = leer.readLine();
+                setDiscografia(opcion);
+                System.out.println( "Ingrese el numero de canciones" );
+                opcion = leer.readLine();
+                setNCanciones(Integer.parseInt(opcion));
+                }
+              break;
+         case "2": 
+              
+              break;
+         case "3": 
+              
+              break;
+         case "4": 
+              
+             break;      
+      }
   }
   
 }
