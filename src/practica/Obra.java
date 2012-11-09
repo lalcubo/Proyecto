@@ -8,6 +8,8 @@ package practica;
  *
  * @author Juan
  */
+import java.util.*;
+
 public class Obra {
     private String titulo; //Título de la obra
     private Artista autor; //Artista autor de la obra
@@ -63,14 +65,17 @@ public class Obra {
     
     }
     /*Busca si existe el artista y se lo asigna a la obra*/
-    public boolean asignarArtista(Artista[] art, String nombre){
+    public boolean asignarArtista(ArrayList art, String nombre){
     
     boolean enc = false;    
-    for(int indi=0 ; indi < art.length && !enc ; indi++) 
-        if(art[indi].getNombre().equalsIgnoreCase(nombre)){
+    for(int indi=0 ; indi < art.size() && !enc ; indi++){ 
+        Artista aux_arti = (Artista)art.get(indi);
+        if(aux_arti.getNombre()!=null && aux_arti.getNombre().equalsIgnoreCase(nombre)){
             enc = true;
-            this.setAutor(art[indi]);
+            this.setAutor(aux_arti);
         }//fin if
+        
+    }//fin for
     return enc;
     
     }//fin asignarArtista

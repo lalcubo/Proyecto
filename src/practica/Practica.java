@@ -4,6 +4,7 @@
  */
 package practica;
 import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -19,20 +20,13 @@ public class Practica {
         InputStreamReader lector = new InputStreamReader(System.in);
         BufferedReader leer = new BufferedReader(lector);
         String opcion;
-        int tam_artista=10;
-        int tam_obra=10;
-        int tam_libros=10;
-        int tam_discos=10;
-        int tam_peliculas=10;
         
-        int pos_artista=0;
-        int pos_libro=0;
-        int pos_disco=0;
-        int pos_pelicula=0;
   
-        Obra[] obra = new Obra[tam_obra];
-        Artista[] artista = new Artista[tam_artista];
-        Disco[] disco = new Disco[tam_discos];
+        ArrayList obra = new ArrayList();
+        ArrayList artista = new ArrayList();
+        ArrayList disco = new ArrayList();
+        Artista arti = new Artista();
+        Disco disc = new Disco();
         do{
             System.out.println( "MENU" );
             System.out.println( "1 Crear Artista" );
@@ -46,15 +40,18 @@ public class Practica {
             switch(opcion)
             {
                case "1":   
-                   artista[pos_artista] = new Artista();
-                   pos_artista=artista[pos_artista].crearMenu(pos_artista);
+                   artista.add(new Artista());
+                   arti = (Artista) artista.get(artista.size()-1);
+                   arti.crearMenu();
                    break;
                case "2":
                  
                    break;
                case "3":
-                   disco[pos_disco] = new Disco();
-                   pos_disco = disco[pos_disco].crearMenu(artista, disco,pos_disco);
+                   disco.add (new Disco());
+                   
+                   disc = (Disco)disco.get(disco.size()-1);
+                   disc.crearMenu(artista, disco);
                    break;
                case "4":
                  

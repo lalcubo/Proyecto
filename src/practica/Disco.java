@@ -4,6 +4,7 @@
  */
 package practica;
 import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -42,50 +43,50 @@ public class Disco extends Obra{
         nCanciones = canc;
     }  
   //---- buscar disco-------
-   public void buscarDisco(Disco[] disc, String nomb,int posi)
+   public void buscarDisco(ArrayList disc, String nomb)
     {
         boolean sw=false;
-     if(posi>0)
-     {
-      for(int indi=0 ; indi < posi; indi++) {
-            if(disc[indi].getTitulo().equalsIgnoreCase(nomb))
+     
+      for(int indi=0 ; indi < disc.size(); indi++) {
+            Disco aux_disc = (Disco)disc.get(indi);
+            if(aux_disc.getTitulo()!=null && aux_disc.getTitulo().equalsIgnoreCase(nomb))
             {
-             System.out.println("EL titulo es: "+disc[indi].getTitulo());
-             System.out.println("El año de edicion es: "+disc[indi].getAnhoEdicion());
-             System.out.println("El autor es: "+disc[indi].getAutor().getNombre());
-             System.out.println("El año de nacimiento es: "+disc[indi].getAutor().getAnioNacimiento());
-             System.out.println("La Discografia es: "+disc[indi].getDiscografia());
-             System.out.println("La cantidad de canciones es: "+disc[indi].getNCanciones());
+             System.out.println("EL titulo es: "+aux_disc.getTitulo());
+             System.out.println("El año de edicion es: "+aux_disc.getAnhoEdicion());
+             System.out.println("El autor es: "+aux_disc.getAutor().getNombre());
+             System.out.println("El año de nacimiento es: "+aux_disc.getAutor().getAnioNacimiento());
+             System.out.println("La Discografia es: "+aux_disc.getDiscografia());
+             System.out.println("La cantidad de canciones es: "+aux_disc.getNCanciones());
              sw=true;
             }
         }
-     }
+     
       if(!sw)
         System.out.println("No existe ningun titulo con ese nombre");  
     } 
    //------- buscar discografica---------
-     public void buscarDiscografica(Disco[] disc, String nomb,int posi)
+     public void buscarDiscografica(ArrayList disc, String nomb)
     {
      boolean sw=false;
-     if(posi>0)
-     {  
-      for(int indi=0 ; indi < posi; indi++) {
-            if(disc[indi].getDiscografia().equalsIgnoreCase(nomb))
+     
+      for(int indi=0 ; indi < disc.size() ; indi++) {
+          Disco aux_disc = (Disco)disc.get(indi);
+            if(aux_disc.getDiscografia()!=null && aux_disc.getDiscografia().equalsIgnoreCase(nomb))
             {
              System.out.println("---------------------------");
-             System.out.println("La Discografia es: "+disc[indi].getDiscografia());
-             System.out.println("El autor es: "+disc[indi].getAutor().getNombre());
-             System.out.println("EL titulo es: "+disc[indi].getTitulo());
-             System.out.println("La cantidad de canciones es: "+disc[indi].getNCanciones());
+             System.out.println("La Discografia es: "+aux_disc.getDiscografia());
+             System.out.println("El autor es: "+aux_disc.getAutor().getNombre());
+             System.out.println("EL titulo es: "+aux_disc.getTitulo());
+             System.out.println("La cantidad de canciones es: "+aux_disc.getNCanciones());
              sw=true;
             }
         }
-     }
+    
       if(!sw)
         System.out.println("No existe ninguna discografica con ese nombre");  
     } 
    ///------ menu------
-  public int crearMenu(Artista[] artis,Disco[] disc,int posi) throws IOException
+  public void crearMenu(ArrayList artis,ArrayList disc) throws IOException
   {
      boolean retorno;
      System.out.println( "MENU DISCO" );
@@ -118,24 +119,24 @@ public class Disco extends Obra{
                 System.out.print( "Ingrese el año de edicion: " );
                 opciones = leer.readLine();
                 setAnhoEdicion(Integer.parseInt(opciones));
-                posi++;
+               
                 }
               break;
          case "2": 
                 System.out.print( "Ingrese el titulo del disco a buscar: " );
                 opciones = leer.readLine();
-                this.buscarDisco(disc, opciones,posi);
+                this.buscarDisco(disc, opciones);
               break;
          case "3": 
                 System.out.print( "Ingrese la discografica a buscar: " );
                 opciones = leer.readLine();
-                this.buscarDiscografica(disc, opciones,posi);              
+                this.buscarDiscografica(disc, opciones);              
               break;
          case "4": 
               
              break;      
       }
-      return posi;
+      
   }
   
 }

@@ -44,7 +44,7 @@ public class Artista {
     {
         nombre = nomb;
     }
-    public int crearMenu(int tama) throws IOException
+    public void crearMenu() throws IOException
     {
      System.out.println( "1 Ingrsar Datos" );
      System.out.println( "2 Volver al menu principal" );
@@ -59,11 +59,11 @@ public class Artista {
              System.out.print( " Ingrese el año de nacimientos: " );
              opciones = leer.readLine();
              this.setAnioNacimiento(Integer.parseInt(opciones));
-             tama++;
+            
             break;
          case "2":
              break;
        }
-       return tama;
+       
     }
 }
