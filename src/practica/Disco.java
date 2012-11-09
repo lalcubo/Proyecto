@@ -42,9 +42,9 @@ public class Disco extends Obra{
         nCanciones = canc;
     }  
   //---- buscar disco-------
-   public void buscarDisco(Disco[] disc, String nomb)
+   public void buscarDisco(Disco[] disc, String nomb,int posi)
     {
-      for(int indi=0 ; indi < disc.length; indi++) {
+      for(int indi=0 ; indi < posi; indi++) {
             if(disc[indi].getTitulo().equalsIgnoreCase(nomb))
             {
              System.out.println("EL titulo es: "+disc[indi].getTitulo());
@@ -56,7 +56,7 @@ public class Disco extends Obra{
             }
         } 
     }  
-  public void crearMenu(Artista[] artis,Disco[] disc) throws IOException
+  public int crearMenu(Artista[] artis,Disco[] disc,int posi) throws IOException
   {
      boolean retorno;
      System.out.println( "MENU DISCO" );
@@ -89,12 +89,13 @@ public class Disco extends Obra{
                 System.out.print( "Ingrese el año de edicion: " );
                 opciones = leer.readLine();
                 setAnhoEdicion(Integer.parseInt(opciones));
+                posi++;
                 }
               break;
          case "2": 
                 System.out.print( "Ingrese el titulo del disco a buscar: " );
                 opciones = leer.readLine();
-                this.buscarDisco(disc, opciones);
+                this.buscarDisco(disc, opciones,posi);
               break;
          case "3": 
               
@@ -103,6 +104,7 @@ public class Disco extends Obra{
               
              break;      
       }
+      return posi;
   }
   
 }

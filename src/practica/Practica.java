@@ -54,8 +54,7 @@ public class Practica {
                    break;
                case "3":
                    disco[pos_disco] = new Disco();
-                   disco[pos_disco].crearMenu(artista, disco);
-                   pos_disco++;
+                   pos_disco = disco[pos_disco].crearMenu(artista, disco,pos_disco);
                    break;
                case "4":
                  
