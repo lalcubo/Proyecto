@@ -44,6 +44,7 @@ public class Disco extends Obra{
   //---- buscar disco-------
    public void buscarDisco(Disco[] disc, String nomb,int posi)
     {
+        boolean sw=false;
       for(int indi=0 ; indi < posi; indi++) {
             if(disc[indi].getTitulo().equalsIgnoreCase(nomb))
             {
@@ -53,12 +54,16 @@ public class Disco extends Obra{
              System.out.println("El año de nacimiento es: "+disc[indi].getAutor().getAnioNacimiento());
              System.out.println("La Discografia es: "+disc[indi].getDiscografia());
              System.out.println("La cantidad de canciones es: "+disc[indi].getNCanciones());
+             sw=true;
             }
-        } 
+        }
+      if(!sw)
+        System.out.println("No existe ningun titulo con ese nombre");  
     } 
    //------- buscar discografica---------
      public void buscarDiscografica(Disco[] disc, String nomb,int posi)
     {
+        boolean sw=false;
       for(int indi=0 ; indi < posi; indi++) {
             if(disc[indi].getDiscografia().equalsIgnoreCase(nomb))
             {
@@ -67,8 +72,11 @@ public class Disco extends Obra{
              System.out.println("El autor es: "+disc[indi].getAutor().getNombre());
              System.out.println("EL titulo es: "+disc[indi].getTitulo());
              System.out.println("La cantidad de canciones es: "+disc[indi].getNCanciones());
+             sw=true;
             }
-        } 
+        }
+      if(!sw)
+        System.out.println("No existe ninguna discografica con ese nombre");  
     } 
    ///------ menu------
   public int crearMenu(Artista[] artis,Disco[] disc,int posi) throws IOException
@@ -84,7 +92,7 @@ public class Disco extends Obra{
       switch(opciones)
       {
          case "1": 
-                System.out.print( "Ingrese artista: " );
+                System.out.print( "Ingrese artista del cd: " );
                 opciones = leer.readLine();
                 retorno = this.asignarArtista(artis, opciones);
                 if(!retorno) {
