@@ -47,8 +47,7 @@ public class Practica {
             {
                case "1":   
                    artista[pos_artista] = new Artista();
-                   artista[pos_artista].crearMenu();
-                   pos_artista++;
+                   pos_artista=artista[pos_artista].crearMenu(pos_artista);
                    break;
                case "2":
                  
