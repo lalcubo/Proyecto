@@ -45,6 +45,8 @@ public class Disco extends Obra{
    public void buscarDisco(Disco[] disc, String nomb,int posi)
     {
         boolean sw=false;
+     if(posi>0)
+     {
       for(int indi=0 ; indi < posi; indi++) {
             if(disc[indi].getTitulo().equalsIgnoreCase(nomb))
             {
@@ -57,13 +59,16 @@ public class Disco extends Obra{
              sw=true;
             }
         }
+     }
       if(!sw)
         System.out.println("No existe ningun titulo con ese nombre");  
     } 
    //------- buscar discografica---------
      public void buscarDiscografica(Disco[] disc, String nomb,int posi)
     {
-        boolean sw=false;
+     boolean sw=false;
+     if(posi>0)
+     {  
       for(int indi=0 ; indi < posi; indi++) {
             if(disc[indi].getDiscografia().equalsIgnoreCase(nomb))
             {
@@ -75,6 +80,7 @@ public class Disco extends Obra{
              sw=true;
             }
         }
+     }
       if(!sw)
         System.out.println("No existe ninguna discografica con ese nombre");  
     } 
