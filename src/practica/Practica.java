@@ -65,7 +65,7 @@ public class Practica {
                case "6": 
                        
                    break;
-              default: System.out.println("No ha escrito ninguna opcion valida.");  
+              default: System.out.println("No se ingreso ninguna opcion valida.");  
             }
             
         }while (!opcion.equals("6"));
