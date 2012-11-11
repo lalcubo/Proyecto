@@ -24,9 +24,11 @@ public class Practica {
   
         ArrayList obra = new ArrayList();
         ArrayList artista = new ArrayList();
+        ArrayList libro = new ArrayList();
         ArrayList disco = new ArrayList();
         Artista arti = new Artista();
         Disco disc = new Disco();
+        Libro libr = new Libro();
         do{
             System.out.println( "MENU" );
             System.out.println( "1 Crear Artista" );
@@ -45,11 +47,12 @@ public class Practica {
                    arti.crearMenu();
                    break;
                case "2":
-                 
+                   libro.add (new Libro());
+                   libr = (Libro)libro.get(libro.size()-1);
+                   libr.crearMenu(artista, libro);        
                    break;
                case "3":
                    disco.add (new Disco());
-                   
                    disc = (Disco)disco.get(disco.size()-1);
                    disc.crearMenu(artista, disco);
                    break;
