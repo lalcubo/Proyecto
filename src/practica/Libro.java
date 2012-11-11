@@ -81,6 +81,7 @@ public class Libro extends Obra{
       if(!sw)
         System.out.println("No existe ninguna editorial con ese nombre");  
     }
+    // la creacion del menu 
     public void crearMenu(ArrayList artis,ArrayList libr) throws IOException
   {
      boolean retorno;
@@ -98,7 +99,7 @@ public class Libro extends Obra{
                 opciones = leer.readLine();
                 retorno = this.asignarArtista(artis, opciones);
                 if(!retorno) {
-                     System.out.println( "El artista no existe" );
+                     System.out.println( "El artista ingresado no existe" );
                 }
                 else
                 {
